@@ -1,0 +1,9 @@
+cmd
+cd Desktop
+django-admin startproject uyalsat
+open with Pycharm
+python -m venv ./venv  #created virtual env
+venv\Scripts\activate  #activated the virtual environment
+pip install django
+pip freeze > requirements.txt
+django-admin startproject uyalsat .
