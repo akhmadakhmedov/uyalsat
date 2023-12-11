@@ -1,5 +1,6 @@
 from django.db import models
 from realtors.models import Realtor
+from PIL import Image
 
 # Create your models here.
 class Listing(models.Model):
@@ -28,6 +29,16 @@ class Listing(models.Model):
     photo_10 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     is_published = models.BooleanField(default=True)
     list_date = models.DateField(auto_now_add=True)
+
+    #def save(self, *args, **kwargs):
+    #    super().save(*args, **kwargs)
+    #    img = Image.open(self.photo_main.path)
+
+    #    if img.height>1920 or img.width<1258:
+    #        output_size = (1920, 1258)
+    #        img.thumbnail(output_size)
+    #        img.save(self.photo_main.path)
+
 
     def __str__(self):
         return self.title
